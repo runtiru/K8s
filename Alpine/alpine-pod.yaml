@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: tiru
-  namespace: runner
+  namespace: dev
   labels:
     app: alpine
 spec:
@@ -17,4 +17,4 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: tiru
-  namespace: runner
+  namespace: dev
