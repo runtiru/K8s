@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+  namespace: default
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  minReadySeconds: 5
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        purpose: nginx-rs
+    spec:
+      containers:
+        - image: nginx:latest
+          name: my-nginx
+          ports:
+            - containerPort: 80
+              protocol: TCP
+  
