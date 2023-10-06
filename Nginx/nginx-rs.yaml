@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: nginx
-  namespace: default
+  namespace: tiru
   labels:
     app: nginx
 spec:
@@ -24,6 +24,10 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
+          env:
+            - name: purpose
+              value: learning
+    
 ---
 apiVersion: v1
 kind: Namespace
